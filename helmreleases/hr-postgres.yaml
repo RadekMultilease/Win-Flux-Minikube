@@ -1,0 +1,20 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: postgres-db
+  namespace: default
+spec:
+  interval: 5m0s
+  chart:
+    spec:
+      chart: "./infrastructure-helm"
+      sourceRef:
+        kind: GitRepository
+        name: flux-system
+        namespace: flux-system
+  targetNamespace: default
+  values:
+    image:
+      repository: postgres
+      tag: "15-alpine"
+    storageSize: "5Gi"
