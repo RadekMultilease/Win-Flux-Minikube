@@ -10,7 +10,7 @@ spec:
       chart: "/main-helm"
       sourceRef:
         kind: GitRepository
-        name: flux-system
+        name: multi-crm-charts
         namespace: flux-system
   targetNamespace: default
   values:
