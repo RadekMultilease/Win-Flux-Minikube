@@ -7,7 +7,7 @@ spec:
   interval: 5m0s
   chart:
     spec:
-      chart: "/infrastructure-helm"
+      chart: "infrastructure-helm"
       sourceRef:
         kind: GitRepository
         name: multi-crm-charts
